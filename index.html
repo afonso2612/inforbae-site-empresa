@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="INFORBAE - Soluções em Tecnologia">
+  <meta property="og:description" content="Assistência técnica, desenvolvimento web e soluções completas em tecnologia.">
+  <meta property="og:image" content="https://afonso2612.github.io/inforbae-site/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://afonso2612.github.io/inforbae-site/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>INFORBAE | Assistência Técnica e Soluções em Tecnologia</title>
+
+
+  <style>
+    :root {
+      --bg: #030712;
+      --bg-2: #071225;
+      --panel: rgba(7, 18, 37, 0.78);
+      --panel-2: rgba(9, 22, 45, 0.92);
+      --line: rgba(59, 130, 246, 0.18);
+      --primary: #1d4ed8;
+      --primary-2: #38b6ff;
+      --accent: #7dd3fc;
+      --text: #eef6ff;
+      --muted: #9fb2c9;
+      --shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(29, 78, 216, 0.18), transparent 20%),
+        linear-gradient(135deg, var(--bg), var(--bg-2));
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56, 182, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 182, 255, 0.05) 1px, transparent 1px);
+      background-size: 38px 38px;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.22) 80%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(3, 7, 18, 0.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(125, 211, 252, 0.10);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(56, 182, 255, 0.18);
+    }
+
+    .brand h1 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      line-height: 1.05;
+      letter-spacing: 0.5px;
+    }
+
+    .brand p {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 0.95rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav a,
+    .btn {
+      text-decoration: none;
+      color: var(--text);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: .25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,.04);
+      border-color: rgba(125, 211, 252, 0.14);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      box-shadow: 0 14px 30px rgba(29, 78, 216, 0.30);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(125, 211, 252, 0.16);
+      background: rgba(255,255,255,.03);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+    }
+
+    .hero {
+      padding: 54px 0 34px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      min-height: 620px;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(56,182,255,.12), transparent 0 18%),
+        radial-gradient(circle at 85% 25%, rgba(29,78,216,.10), transparent 0 20%),
+        linear-gradient(135deg, rgba(4,10,24,.98), rgba(6,14,34,.96));
+      z-index: 0;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(56,182,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,182,255,.08) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: .45;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+      min-height: 620px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(125, 211, 252, 0.18);
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: clamp(2.4rem, 5vw, 4.9rem);
+      line-height: 1.02;
+      margin-bottom: 18px;
+      max-width: 720px;
+      text-shadow: 0 8px 28px rgba(0,0,0,.45);
+    }
+
+    .hero h2 span {
+      color: var(--primary-2);
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: #d9e8f7;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(125, 211, 252, 0.14);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .tech-panel {
+      padding: 24px;
+      border-radius: 26px;
+      position: relative;
+      overflow: hidden;
+      min-height: 170px;
+    }
+
+    .tech-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      z-index: 0;
+    }
+
+    .tech-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tech-panel h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .tech-panel p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+
+    .tech-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .tech-item {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .icon-box {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.55rem;
+      background: linear-gradient(135deg, rgba(29,78,216,.18), rgba(56,182,255,.08));
+      border: 1px solid rgba(125, 211, 252, 0.16);
+      box-shadow: inset 0 0 16px rgba(56,182,255,.06);
+    }
+
+    .tech-item h4 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    .tech-item p {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.95rem;
+    }
+
+    .hero-bottom {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(125, 211, 252, 0.12);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .trust {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .trust i {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-style: normal;
+      font-size: 1.25rem;
+      border: 1px solid rgba(125, 211, 252, 0.16);
+      background: rgba(255,255,255,.03);
+    }
+
+    .trust span {
+      color: #dce8f5;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 26px 0 70px;
+    }
+
+    .section-header {
+      margin-bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .section-header span {
+      color: var(--primary-2);
+      font-size: .92rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-header h3 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.08;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.65;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 24px;
+      border-radius: 24px;
+      transition: .28s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.96rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .about-box {
+      padding: 28px;
+      border-radius: 28px;
+    }
+
+    .about-box ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .about-box li {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+      color: #dbe9f5;
+      line-height: 1.6;
+    }
+
+    .about-box li::before {
+      content: "◆";
+      color: var(--primary-2);
+      margin-top: 2px;
+      font-size: 0.88rem;
+    }
+
+    .cta {
+      padding-bottom: 80px;
+    }
+
+    .cta-box {
+      padding: 34px;
+      border-radius: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background:
+        linear-gradient(135deg, rgba(29,78,216,.16), rgba(7,15,34,.9));
+      border: 1px solid rgba(125, 211, 252, 0.16);
+      box-shadow: var(--shadow);
+    }
+
+    .cta h3 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.08;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #dbe9f5;
+      line-height: 1.65;
+      max-width: 650px;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(125, 211, 252, 0.10);
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp .9s ease forwards;
+    }
+
+    .delay-1 { animation-delay: .1s; }
+    .delay-2 { animation-delay: .2s; }
+    .delay-3 { animation-delay: .3s; }
+    .delay-4 { animation-delay: .4s; }
+    .delay-5 { animation-delay: .5s; }
+    .delay-6 { animation-delay: .6s; }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-content,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-metrics,
+      .hero-bottom {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        width: 100%;
+      }
+
+      nav a,
+      .btn {
+        width: 100%;
+      }
+
+      .hero-content,
+      .about-box,
+      .cta-box {
+        padding: 24px;
+      }
+
+      .hero-metrics,
+      .hero-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        align-items: flex-start;
+      }
+    }
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  animation: pulse 2s infinite;
+}
+
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+    
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+   @keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+  }
+} 
+
+.portfolio {
+  padding: 90px 0;
+}
+
+.section-title {
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.section-title span {
+  display: inline-block;
+  color: #7dd3fc;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  color: #eef6ff;
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  color: #9fb2c9;
+  line-height: 1.7;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.portfolio-card {
+  padding: 14px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.portfolio-card img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.portfolio-card {
+  padding: 14px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.portfolio-card img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
+.galeria-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 24px;
+}
+
+.galeria-img {
+  max-width: 92%;
+  max-height: 88vh;
+  border-radius: 22px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transform: scale(0.92);
+  opacity: 0;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.galeria-modal.ativo .galeria-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.galeria-fechar {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  font-size: 46px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.galeria-fechar:hover {
+  transform: scale(1.12);
+  opacity: 0.85;
+}
+
+#galeriaModal {
+  backdrop-filter: blur(6px);
+}
+
+#galeriaImg {
+  max-width: 95%;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+}
+
+
+
+#galeriaModal.ativo #galeriaImg {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+#galeriaImg {
+  transform: scale(0.8);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.portfolio-card img {
+  transition: 0.3s;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.portfolio-card:hover::before {
+  animation: brilho 0.8s ease;
+}
+
+@keyframes brilho {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.portfolio-card img {
+  transition: 0.4s;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+/* 🎬 EFEITO CINEMATOGRÁFICO */
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* brilho passando */
+.portfolio-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+/* animação do brilho */
+.portfolio-card:hover::before {
+  animation: brilho 1s ease;
+}
+
+@keyframes brilho {
+  0% { left: -100%; }
+  100% { left: 150%; }
+}
+
+/* imagem */
+.portfolio-card img {
+  transition: transform 0.5s ease;
+}
+
+/* 🎬 EFEITO COMPLETO */
+.portfolio-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.08);
+}
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.15s ease, box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.portfolio-card img {
+  display: block;
+  width: 100%;
+  transition: transform 0.15s ease;
+  transform: translateZ(0);
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand fade-up delay-1">
+        <img src="img/logo.webp" alt="Logo INFORBAE">
+        <div>
+          <h1>INFORBAE</h1>
+          <p>Assistência técnica, suporte e soluções em tecnologia</p>
+        </div>
+      </div>
+
+      <nav class="fade-up delay-2">
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato" class="btn btn-primary">Falar no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <article class="hero-card glass fade-up delay-1">
+        <div class="hero-content">
+          <div>
+            <div class="hero-badge">⚡ Soluções inteligentes para o seu negócio</div>
+
+            <h2>Quer atendimento rápido com cara de <span>empresa grande?</span></h2>
+
+            <p>
+              Fale agora com a INFORBAE e solicite orçamento para manutenção,
+              upgrade, redes, impressoras, câmeras e suporte em tecnologia.
+            </p>
+
+            <div class="hero-actions">
+              <a href="https://wa.me/5592992077020" target="_blank" class="btn btn-primary">
+                Chamar no WhatsApp
+              </a>
+              <a href="#servicos" class="btn btn-outline">Ver serviços</a>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric glass">
+                <strong>Suporte</strong>
+                <span>Atendimento técnico ágil e profissional.</span>
+              </div>
+              <div class="metric glass">
+                <strong>Upgrade</strong>
+                <span>Mais velocidade e desempenho para seu equipamento.</span>
+              </div>
+              <div class="metric glass">
+                <strong>Confiança</strong>
+                <span>Visual moderno com presença de empresa séria.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="tech-panel glass">
+              <div class="tech-list">
+                <div class="tech-item">
+                  <div class="icon-box">🧠</div>
+                  <div>
+                    <h4>Análise e otimização de processos</h4>
+                    <p>Mais desempenho e eficiência para sua operação.</p>
+                  </div>
+                </div>
+
+                <div class="tech-item">
+                  <div class="icon-box">💻</div>
+                  <div>
+                    <h4>Desenvolvimento Web</h4>
+                    <p>Sites modernos, responsivos e com aparência profissional.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-panel glass">
+              <div class="tech-list">
+                <div class="tech-item">
+                  <div class="icon-box">⌨️</div>
+                  <div>
+                    <h4>Automação e soluções em tecnologia</h4>
+                    <p>Recursos que economizam tempo e melhoram o atendimento.</p>
+                  </div>
+                </div>
+
+                <div class="tech-item">
+                  <div class="icon-box">🌐</div>
+                  <div>
+                    <h4>Infraestrutura, redes e suporte</h4>
+                    <p>Conectividade, estabilidade e organização técnica.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-bottom">
+            <div class="trust">
+              <i>🛡️</i>
+              <span>Qualidade garantida</span>
+            </div>
+            <div class="trust">
+              <i>🎧</i>
+              <span>Atendimento especializado</span>
+            </div>
+            <div class="trust">
+              <i>⏱️</i>
+              <span>Rapidez e eficiência</span>
+            </div>
+            <div class="trust">
+              <i>🔒</i>
+              <span>Compromisso com você</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-header fade-up delay-1">
+        <div>
+          <span>Serviços em destaque</span>
+          <h3>Tecnologia aplicada com presença profissional</h3>
+        </div>
+        <p>
+          Estrutura visual premium para mostrar autoridade, confiança e capacidade técnica.
+        </p>
+      </div>
+
+      <div class="services">
+        <article class="service-card glass fade-up delay-1">
+          <div class="icon-box">🖥️</div>
+          <h4>Manutenção de Computadores</h4>
+          <p>Correção de falhas, limpeza, revisão técnica e recuperação de desempenho.</p>
+        </article>
+
+        <article class="service-card glass fade-up delay-2">
+          <div class="icon-box">⚙️</div>
+          <h4>Formatação e Otimização</h4>
+          <p>Instalação de sistema, backup, organização e melhoria do equipamento.</p>
+        </article>
+
+        <article class="service-card glass fade-up delay-3">
+          <div class="icon-box">🌐</div>
+          <h4>Redes e Conectividade</h4>
+          <p>Configuração de rede, roteadores, estabilidade e suporte local.</p>
+        </article>
+
+        <article class="service-card glass fade-up delay-4">
+          <div class="icon-box">🖨️</div>
+          <h4>Impressoras e Periféricos</h4>
+          <p>Manutenção, revisão e solução de problemas em equipamentos essenciais.</p>
+        </article>
+
+        <article class="service-card glass fade-up delay-5">
+          <div class="icon-box">📹</div>
+          <h4>CFTV e Segurança</h4>
+          <p>Monitoramento, instalação e suporte para mais proteção e controle.</p>
+        </article>
+
+        <article class="service-card glass fade-up delay-6">
+          <div class="icon-box">💾</div>
+          <h4>Upgrade de Hardware</h4>
+          <p>SSD, memória RAM e melhorias para elevar a performance.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <div class="container about-grid">
+      <div class="about-box glass fade-up delay-1">
+        <div class="section-header" style="margin-bottom: 0;">
+          <div>
+            <span>Quem somos</span>
+            <h3>INFORBAE com cara de empresa tecnológica de verdade</h3>
+          </div>
+        </div>
+
+        <p style="color: var(--muted); line-height: 1.75; margin-top: 16px;">
+          A INFORBAE foi pensada para transmitir confiança, modernidade e profissionalismo.
+          O foco é entregar soluções em tecnologia com uma presença visual forte,
+          organizada e alinhada com empresas respeitadas do setor.
+        </p>
+
+        <ul>
+          <li>Identidade visual tecnológica com azul forte, preto profundo e brilho controlado.</li>
+          <li>Comunicação direta, moderna e orientada para gerar confiança.</li>
+          <li>Estrutura pronta para crescer com novos serviços e novas seções.</li>
+          <li>Posicionamento premium para fortalecer a marca diante do cliente.</li>
+        </ul>
+      </div>
+
+      <div class="about-box glass fade-up delay-2">
+        <div class="section-header" style="margin-bottom: 0;">
+          <div>
+            <span>Por que confiar</span>
+            <h3>Presença, tecnologia e respeito visual</h3>
+          </div>
+        </div>
+
+        <p style="color: var(--muted); line-height: 1.75; margin-top: 16px;">
+          O site foi desenhado para parecer limpo, forte e tecnológico — sem poluição visual,
+          sem imagens brigando com o texto e com leitura clara para o visitante.
+        </p>
+
+        <ul>
+          <li>Leitura forte e contraste profissional.</li>
+          <li>Hero limpo com foco em autoridade.</li>
+          <li>Seções preparadas para converter visitante em cliente.</li>
+          <li>Base ideal para evoluir para catálogo, chatbot e landing page de vendas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-title">
+      <span>Nossos trabalhos</span>
+      <h2>Portfólio INFORBAE</h2>
+      <p>Algumas artes e materiais visuais que representam a força da nossa marca e nossos serviços em tecnologia.</p>
+    </div>
+  <div class="portfolio-grid">
+
+  <div class="portfolio-card glass" onclick="abrirGaleria('img/capa-portfolio.webp')">
+    <img src="img/capa-portfolio.webp">
+  </div>
+
+  <div class="portfolio-card glass" onclick="abrirGaleria('img/portfolio-site.webp')">
+    <img src="img/portfolio-site.webp">
+  </div>
+
+  <div class="portfolio-card glass" onclick="abrirGaleria('img/portfolio-redes.webp')">
+    <img src="img/portfolio-redes.webp">
+  </div>
+
+  <div class="portfolio-card glass" onclick="abrirGaleria('img/portfolio-manutencao.webp')">
+    <img src="img/portfolio-manutencao.webp">
+  </div>
+
+    </div>
+  </div>
+</section>
+
+  <section class="cta" id="contato">
+    <div class="container">
+      <div class="cta-box fade-up delay-1">
+        <div>
+          <h3>Quer atendimento rápido com cara de empresa grande?</h3>
+          <p>
+            Fale com a INFORBAE e solicite orçamento para manutenção, upgrades,
+            redes, impressoras, câmeras e suporte em tecnologia.
+          </p>
+        </div>
+
+        <a href="https://wa.me/5592992077020" target="_blank" class="btn btn-primary">
+          Chamar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <p>© 2026 INFORBAE • Assistência Técnica e Soluções em Tecnologia</p>
+      <p>Profissionalismo que faz a diferença.</p>
+    </div>
+  </footer>
+
+<!-- BOTÃO FLUTUANTE -->
+<a href="https://wa.me/5592992077020?text=Olá,%20vim%20pelo%20site%20da%20INFORBAE%20e%20quero%20um%20orçamento."
+   class="whatsapp-float"
+   target="_blank">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path d="M20.52 3.48A11.8 11.8 0 0 0 12.06 0C5.54 0 .25 5.29.25 11.81c0 2.08.54 4.11 1.57 5.89L0 24l6.5-1.7a11.8 11.8 0 0 0 5.56 1.42h.01c6.52 0 11.81-5.29 11.81-11.81 0-3.15-1.23-6.11-3.36-8.43Z"/>
+ </svg>
+</a>
+
+<div id="galeriaModal" class="galeria-modal">
+  <span id="fecharGaleria" class="galeria-fechar">&times;</span>
+  <img id="galeriaImg" class="galeria-img" alt="Imagem ampliada">
+</div>
+
+  <span id="fecharGaleria" style="
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+  ">
+    &times;
+  </span>
+
+  <img id="galeriaImg" style="max-width:90%; max-height:90%; border-radius:16px;">
+
+</div>
+
+<script>
+function abrirGaleria(img) {
+  const modal = document.getElementById("galeriaModal");
+  const imagem = document.getElementById("galeriaImg");
+
+  imagem.src = img;
+  modal.style.display = "flex";
+
+  setTimeout(() => {
+    modal.classList.add("ativo");
+  }, 10);
+}
+
+document.getElementById("galeriaModal").onclick = function() {
+  this.classList.remove("ativo");
+  setTimeout(() => {
+    this.style.display = "none";
+  }, 280);
+}
+
+document.getElementById("fecharGaleria").onclick = function(event) {
+  event.stopPropagation();
+  const modal = document.getElementById("galeriaModal");
+  modal.classList.remove("ativo");
+
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 280);
+}
+</script>
+
+<script>
+document.querySelectorAll(".portfolio-card").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateY = ((x - centerX) / centerX) * 12;
+    const rotateX = ((centerY - y) / centerY) * 12;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+  });
+});
+</script>
+
+</body>
+</html>
