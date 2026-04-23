@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="INFORBAE - Soluções em Tecnologia">
-  <meta property="og:description" content="Assistência técnica, desenvolvimento web e soluções completas em tecnologia.">
+  <meta property="og:description" content="Assistência técnica, suporte e soluções completas em tecnologia.">
   <meta property="og:image" content="https://afonso2612.github.io/inforbae-site-empresa/img/portfolio-site.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -13,13 +13,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>INFORBAE | Assistência Técnica e Soluções em Tecnologia</title>
 
-
   <style>
     :root {
       --bg: #030712;
       --bg-2: #071225;
       --panel: rgba(7, 18, 37, 0.78);
-      --panel-2: rgba(9, 22, 45, 0.92);
       --line: rgba(59, 130, 246, 0.18);
       --primary: #1d4ed8;
       --primary-2: #38b6ff;
@@ -27,7 +25,6 @@
       --text: #eef6ff;
       --muted: #9fb2c9;
       --shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-      --radius: 24px;
     }
 
     * {
@@ -65,8 +62,7 @@
       content: "";
       position: fixed;
       inset: 0;
-      background:
-        radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.22) 80%);
+      background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.22) 80%);
       pointer-events: none;
       z-index: -1;
     }
@@ -86,8 +82,8 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(3, 7, 18, 0.78);
+      z-index: 1000;
+      background: rgba(3, 7, 18, 0.82);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(125, 211, 252, 0.10);
     }
@@ -97,14 +93,15 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      flex-wrap: wrap;
       padding: 16px 0;
+      position: relative;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 14px;
+      min-width: 0;
     }
 
     .brand img {
@@ -113,6 +110,7 @@
       object-fit: cover;
       border-radius: 18px;
       box-shadow: 0 10px 24px rgba(56, 182, 255, 0.18);
+      flex-shrink: 0;
     }
 
     .brand h1 {
@@ -127,11 +125,29 @@
       font-size: 0.95rem;
     }
 
+    .menu-toggle {
+      display: none;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      border: 1px solid rgba(125, 211, 252, 0.16);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-size: 1.6rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: 0.25s ease;
+    }
+
+    .menu-toggle:hover {
+      background: rgba(255,255,255,.08);
+    }
+
     nav {
       display: flex;
       align-items: center;
       gap: 10px;
-      flex-wrap: wrap;
     }
 
     nav a,
@@ -300,26 +316,13 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      background: linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
       z-index: 0;
     }
 
     .tech-panel > * {
       position: relative;
       z-index: 1;
-    }
-
-    .tech-panel h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-
-    .tech-panel p {
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 0.96rem;
     }
 
     .tech-list {
@@ -404,7 +407,8 @@
       flex-wrap: wrap;
     }
 
-    .section-header span {
+    .section-header span,
+    .section-title span {
       color: var(--primary-2);
       font-size: .92rem;
       text-transform: uppercase;
@@ -414,12 +418,14 @@
       margin-bottom: 8px;
     }
 
-    .section-header h3 {
+    .section-header h3,
+    .section-title h2 {
       font-size: clamp(1.8rem, 4vw, 3rem);
       line-height: 1.08;
     }
 
-    .section-header p {
+    .section-header p,
+    .section-title p {
       color: var(--muted);
       max-width: 620px;
       line-height: 1.65;
@@ -443,7 +449,7 @@
 
     .service-card h4 {
       font-size: 1.15rem;
-      margin-bottom: 10px;
+      margin: 12px 0 10px;
     }
 
     .service-card p {
@@ -485,6 +491,98 @@
       font-size: 0.88rem;
     }
 
+    .portfolio {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .portfolio-card {
+      position: relative;
+      overflow: hidden;
+      padding: 14px;
+      border-radius: 24px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      will-change: transform;
+      cursor: pointer;
+    }
+
+    .portfolio-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-25deg);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .portfolio-card:hover::before {
+      animation: brilho 1s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+    }
+
+    .portfolio-card img {
+      display: block;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: transform 0.35s ease;
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .portfolio-info {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(3, 7, 18, 0.82);
+      border: 1px solid rgba(125, 211, 252, 0.14);
+      backdrop-filter: blur(8px);
+      z-index: 3;
+    }
+
+    .portfolio-info strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .portfolio-info span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    @keyframes brilho {
+      0% { left: -100%; }
+      100% { left: 150%; }
+    }
+
     .cta {
       padding-bottom: 80px;
     }
@@ -497,8 +595,7 @@
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
-      background:
-        linear-gradient(135deg, rgba(29,78,216,.16), rgba(7,15,34,.9));
+      background: linear-gradient(135deg, rgba(29,78,216,.16), rgba(7,15,34,.9));
       border: 1px solid rgba(125, 211, 252, 0.16);
       box-shadow: var(--shadow);
     }
@@ -529,28 +626,111 @@
       align-items: center;
     }
 
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp .9s ease forwards;
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #1ebe5d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      animation: pulse 2s infinite;
     }
 
-    .delay-1 { animation-delay: .1s; }
-    .delay-2 { animation-delay: .2s; }
-    .delay-3 { animation-delay: .3s; }
-    .delay-4 { animation-delay: .4s; }
-    .delay-5 { animation-delay: .5s; }
-    .delay-6 { animation-delay: .6s; }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    }
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 95px;
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(29, 78, 216, 0.35);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9998;
+    }
+
+    .back-to-top.show {
+      display: flex;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      100% {
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
       }
+    }
+
+    .galeria-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      padding: 24px;
+    }
+
+    .galeria-img {
+      max-width: 95%;
+      max-height: 95vh;
+      width: auto;
+      height: auto;
+      border-radius: 22px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transform: scale(0.92);
+      opacity: 0;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+    }
+
+    .galeria-modal.ativo .galeria-img {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .galeria-fechar {
+      position: absolute;
+      top: 18px;
+      right: 28px;
+      font-size: 46px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 1;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .galeria-fechar:hover {
+      transform: scale(1.12);
+      opacity: 0.85;
     }
 
     @media (max-width: 980px) {
@@ -563,11 +743,40 @@
       .hero-bottom {
         grid-template-columns: 1fr 1fr;
       }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 780px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
       nav {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
         width: 100%;
+        padding: 16px;
+        border-radius: 24px;
+        background: rgba(3, 7, 18, 0.98);
+        border: 1px solid rgba(125, 211, 252, 0.12);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.28s ease;
+      }
+
+      nav.ativo {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
       }
 
       nav a,
@@ -587,329 +796,90 @@
       }
 
       .brand {
-        align-items: flex-start;
+        max-width: calc(100% - 70px);
+      }
+
+      .brand img {
+        width: 56px;
+        height: 56px;
+      }
+
+      .brand p {
+        font-size: 0.88rem;
+      }
+
+      .hero h2 {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .portfolio-card img {
+        height: 220px;
+      }
+
+      .portfolio-info {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
       }
     }
-.whatsapp-float {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #25d366, #1ebe5d);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  animation: pulse 2s infinite;
-}
 
+    @media (max-width: 520px) {
+      .topbar {
+        gap: 14px;
+      }
 
-.whatsapp-float svg {
-  width: 30px;
-  height: 30px;
-  fill: white;
-}
-    
+      .brand h1 {
+        font-size: 1.25rem;
+      }
 
-.whatsapp-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
-}
+      .brand p {
+        font-size: 0.82rem;
+      }
 
-.whatsapp-float svg {
-  width: 32px;
-  height: 32px;
-  fill: white;
-}
-   @keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-  }
-  100% {
-    box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
-  }
-} 
+      .hero {
+        padding-top: 30px;
+      }
 
-.portfolio {
-  padding: 90px 0;
-}
+      .hero-card {
+        border-radius: 24px;
+      }
 
-.section-title {
-  max-width: 700px;
-  margin-bottom: 30px;
-}
+      .hero-content {
+        padding: 20px;
+      }
 
-.section-title span {
-  display: inline-block;
-  color: #7dd3fc;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
+      .service-card,
+      .about-box,
+      .cta-box {
+        padding: 20px;
+      }
 
-.section-title h2 {
-  font-size: 2.2rem;
-  color: #eef6ff;
-  margin-bottom: 12px;
-}
+      .portfolio-card {
+        padding: 10px;
+      }
 
-.section-title p {
-  color: #9fb2c9;
-  line-height: 1.7;
-}
+      .portfolio-card img {
+        height: 190px;
+      }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
+      .portfolio-info strong {
+        font-size: 0.95rem;
+      }
 
-.portfolio-card {
-  padding: 14px;
-  border-radius: 24px;
-  overflow: hidden;
-}
-
-.portfolio-card img {
-  width: 100%;
-  display: block;
-  border-radius: 18px;
-  object-fit: cover;
-  transition: transform 0.35s ease;
-}
-
-.portfolio-card:hover img {
-  transform: scale(1.03);
-}
-
-@media (max-width: 900px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.portfolio-card {
-  padding: 14px;
-  border-radius: 24px;
-  overflow: hidden;
-}
-
-.portfolio-card img {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-}
-
-.galeria-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.82);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  padding: 24px;
-}
-
-.galeria-img {
-  max-width: 92%;
-  max-height: 88vh;
-  border-radius: 22px;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transform: scale(0.92);
-  opacity: 0;
-  transition: transform 0.28s ease, opacity 0.28s ease;
-}
-
-.galeria-modal.ativo .galeria-img {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.galeria-fechar {
-  position: absolute;
-  top: 18px;
-  right: 28px;
-  font-size: 46px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  line-height: 1;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.galeria-fechar:hover {
-  transform: scale(1.12);
-  opacity: 0.85;
-}
-
-#galeriaModal {
-  backdrop-filter: blur(6px);
-}
-
-#galeriaImg {
-  max-width: 95%;
-  max-height: 95vh;
-  width: auto;
-  height: auto;
-  border-radius: 16px;
-}
-
-
-
-#galeriaModal.ativo #galeriaImg {
-  transform: scale(1);
-  opacity: 1;
-}
-
-
-#galeriaImg {
-  transform: scale(0.8);
-}
-
-.portfolio-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-.portfolio-card img {
-  transition: 0.3s;
-}
-
-.portfolio-card:hover img {
-  transform: scale(1.05);
-}
-
-.portfolio-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-  transform: skewX(-25deg);
-}
-
-.portfolio-card:hover::before {
-  animation: brilho 0.8s ease;
-}
-
-@keyframes brilho {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 150%;
-  }
-}
-
-.portfolio-card img {
-  transition: 0.4s;
-}
-
-.portfolio-card:hover img {
-  transform: scale(1.05);
-}
-
-/* 🎬 EFEITO CINEMATOGRÁFICO */
-.portfolio-card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* brilho passando */
-.portfolio-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.5),
-    transparent
-  );
-  transform: skewX(-25deg);
-}
-
-/* animação do brilho */
-.portfolio-card:hover::before {
-  animation: brilho 1s ease;
-}
-
-@keyframes brilho {
-  0% { left: -100%; }
-  100% { left: 150%; }
-}
-
-/* imagem */
-.portfolio-card img {
-  transition: transform 0.5s ease;
-}
-
-/* 🎬 EFEITO COMPLETO */
-.portfolio-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-}
-
-.portfolio-card:hover img {
-  transform: scale(1.08);
-}
-
-.portfolio-card {
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transition: transform 0.15s ease, box-shadow 0.25s ease;
-  will-change: transform;
-}
-
-.portfolio-card img {
-  display: block;
-  width: 100%;
-  transition: transform 0.15s ease;
-  transform: translateZ(0);
-}
-
-.portfolio-card:hover {
-  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
-}
-
+      .portfolio-info span {
+        font-size: 0.84rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container topbar">
-      <div class="brand fade-up delay-1">
+      <div class="brand">
         <img src="img/logo.webp" alt="Logo INFORBAE">
         <div>
           <h1>INFORBAE</h1>
@@ -917,7 +887,11 @@
         </div>
       </div>
 
-      <nav class="fade-up delay-2">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        ☰
+      </button>
+
+      <nav id="menu">
         <a href="#servicos">Serviços</a>
         <a href="#sobre">Sobre</a>
         <a href="#portfolio">Portfólio</a>
@@ -928,20 +902,18 @@
 
   <section class="hero">
     <div class="container">
-      <article class="hero-card glass fade-up delay-1">
+      <article class="hero-card glass">
         <div class="hero-content">
           <div>
             <div class="hero-badge">⚡ Soluções inteligentes para o seu negócio</div>
-
             <h2>Quer atendimento rápido com cara de <span>empresa grande?</span></h2>
-
             <p>
               Fale agora com a INFORBAE e solicite orçamento para manutenção,
               upgrade, redes, impressoras, câmeras e suporte em tecnologia.
             </p>
 
             <div class="hero-actions">
-              <a href="https://wa.me/5592992077020" target="_blank" class="btn btn-primary">
+              <a href="https://wa.me/5592992077020" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 Chamar no WhatsApp
               </a>
               <a href="#servicos" class="btn btn-outline">Ver serviços</a>
@@ -1030,7 +1002,7 @@
 
   <section class="section" id="servicos">
     <div class="container">
-      <div class="section-header fade-up delay-1">
+      <div class="section-header">
         <div>
           <span>Serviços em destaque</span>
           <h3>Tecnologia aplicada com presença profissional</h3>
@@ -1041,37 +1013,37 @@
       </div>
 
       <div class="services">
-        <article class="service-card glass fade-up delay-1">
+        <article class="service-card glass">
           <div class="icon-box">🖥️</div>
           <h4>Manutenção de Computadores</h4>
           <p>Correção de falhas, limpeza, revisão técnica e recuperação de desempenho.</p>
         </article>
 
-        <article class="service-card glass fade-up delay-2">
+        <article class="service-card glass">
           <div class="icon-box">⚙️</div>
           <h4>Formatação e Otimização</h4>
           <p>Instalação de sistema, backup, organização e melhoria do equipamento.</p>
         </article>
 
-        <article class="service-card glass fade-up delay-3">
+        <article class="service-card glass">
           <div class="icon-box">🌐</div>
           <h4>Redes e Conectividade</h4>
           <p>Configuração de rede, roteadores, estabilidade e suporte local.</p>
         </article>
 
-        <article class="service-card glass fade-up delay-4">
+        <article class="service-card glass">
           <div class="icon-box">🖨️</div>
           <h4>Impressoras e Periféricos</h4>
           <p>Manutenção, revisão e solução de problemas em equipamentos essenciais.</p>
         </article>
 
-        <article class="service-card glass fade-up delay-5">
+        <article class="service-card glass">
           <div class="icon-box">📹</div>
           <h4>CFTV e Segurança</h4>
           <p>Monitoramento, instalação e suporte para mais proteção e controle.</p>
         </article>
 
-        <article class="service-card glass fade-up delay-6">
+        <article class="service-card glass">
           <div class="icon-box">💾</div>
           <h4>Upgrade de Hardware</h4>
           <p>SSD, memória RAM e melhorias para elevar a performance.</p>
@@ -1082,7 +1054,7 @@
 
   <section class="section" id="sobre">
     <div class="container about-grid">
-      <div class="about-box glass fade-up delay-1">
+      <div class="about-box glass">
         <div class="section-header" style="margin-bottom: 0;">
           <div>
             <span>Quem somos</span>
@@ -1104,7 +1076,7 @@
         </ul>
       </div>
 
-      <div class="about-box glass fade-up delay-2">
+      <div class="about-box glass">
         <div class="section-header" style="margin-bottom: 0;">
           <div>
             <span>Por que confiar</span>
@@ -1127,38 +1099,53 @@
     </div>
   </section>
 
-<section class="portfolio" id="portfolio">
-  <div class="container">
-    <div class="section-title">
-      <span>Nossos trabalhos</span>
-      <h2>Portfólio INFORBAE</h2>
-      <p>Algumas artes e materiais visuais que representam a força da nossa marca e nossos serviços em tecnologia.</p>
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <span>Nossos trabalhos</span>
+        <h2>Portfólio INFORBAE</h2>
+        <p>Algumas artes e materiais visuais que representam a força da nossa marca e nossos serviços em tecnologia.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card glass" onclick="abrirGaleria('img/capa-portfolio.webp')">
+          <img src="img/capa-portfolio.webp" alt="Capa do portfólio INFORBAE">
+          <div class="portfolio-info">
+            <strong>Identidade visual</strong>
+            <span>Apresentação forte da marca INFORBAE</span>
+          </div>
+        </div>
+
+        <div class="portfolio-card glass" onclick="abrirGaleria('img/portfolio-site.webp')">
+          <img src="img/portfolio-site.webp" alt="Projeto de site da INFORBAE">
+          <div class="portfolio-info">
+            <strong>Projeto Web</strong>
+            <span>Site moderno e responsivo com foco comercial</span>
+          </div>
+        </div>
+
+        <div class="portfolio-card glass" onclick="abrirGaleria('img/portfolio-redes.webp')">
+          <img src="img/portfolio-redes.webp" alt="Projeto de redes da INFORBAE">
+          <div class="portfolio-info">
+            <strong>Infraestrutura de rede</strong>
+            <span>Organização, conectividade e estabilidade</span>
+          </div>
+        </div>
+
+        <div class="portfolio-card glass" onclick="abrirGaleria('img/portfolio-manutencao.webp')">
+          <img src="img/portfolio-manutencao.webp" alt="Projeto de manutenção da INFORBAE">
+          <div class="portfolio-info">
+            <strong>Manutenção técnica</strong>
+            <span>Serviços especializados e suporte profissional</span>
+          </div>
+        </div>
+      </div>
     </div>
-  <div class="portfolio-grid">
-
-  <div class="portfolio-card glass" onclick="abrirGaleria('img/capa-portfolio.webp')">
-    <img src="img/capa-portfolio.webp">
-  </div>
-
-  <div class="portfolio-card glass" onclick="abrirGaleria('img/portfolio-site.webp')">
-    <img src="img/portfolio-site.webp">
-  </div>
-
-  <div class="portfolio-card glass" onclick="abrirGaleria('img/portfolio-redes.webp')">
-    <img src="img/portfolio-redes.webp">
-  </div>
-
-  <div class="portfolio-card glass" onclick="abrirGaleria('img/portfolio-manutencao.webp')">
-    <img src="img/portfolio-manutencao.webp">
-  </div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
   <section class="cta" id="contato">
     <div class="container">
-      <div class="cta-box fade-up delay-1">
+      <div class="cta-box">
         <div>
           <h3>Quer atendimento rápido com cara de empresa grande?</h3>
           <p>
@@ -1167,8 +1154,8 @@
           </p>
         </div>
 
-        <a href="https://wa.me/5592992077020" target="_blank" class="btn btn-primary">
-          Chamar no WhatsApp
+        <a href="https://wa.me/5592992077020" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Solicitar orçamento
         </a>
       </div>
     </div>
@@ -1181,88 +1168,108 @@
     </div>
   </footer>
 
-<!-- BOTÃO FLUTUANTE -->
-<a href="https://wa.me/5592992077020?text=Olá,%20vim%20pelo%20site%20da%20INFORBAE%20e%20quero%20um%20orçamento."
-   class="whatsapp-float"
-   target="_blank">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path d="M20.52 3.48A11.8 11.8 0 0 0 12.06 0C5.54 0 .25 5.29.25 11.81c0 2.08.54 4.11 1.57 5.89L0 24l6.5-1.7a11.8 11.8 0 0 0 5.56 1.42h.01c6.52 0 11.81-5.29 11.81-11.81 0-3.15-1.23-6.11-3.36-8.43Z"/>
- </svg>
-</a>
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
 
-<div id="galeriaModal" class="galeria-modal">
-  <span id="fecharGaleria" class="galeria-fechar">&times;</span>
-  <img id="galeriaImg" class="galeria-img" alt="Imagem ampliada">
-</div>
+  <a
+    href="https://wa.me/5592992077020?text=Olá,%20vim%20pelo%20site%20da%20INFORBAE%20e%20quero%20um%20orçamento."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.8 11.8 0 0 0 12.06 0C5.54 0 .25 5.29.25 11.81c0 2.08.54 4.11 1.57 5.89L0 24l6.5-1.7a11.8 11.8 0 0 0 5.56 1.42h.01c6.52 0 11.81-5.29 11.81-11.81 0-3.15-1.23-6.11-3.36-8.43Z"/>
+    </svg>
+  </a>
 
-  <span id="fecharGaleria" style="
-    position:absolute;
-    top:20px;
-    right:30px;
-    font-size:40px;
-    color:white;
-    cursor:pointer;
-    font-weight:bold;
-  ">
-    &times;
-  </span>
+  <div id="galeriaModal" class="galeria-modal">
+    <span id="fecharGaleria" class="galeria-fechar">&times;</span>
+    <img id="galeriaImg" class="galeria-img" alt="Imagem ampliada">
+  </div>
 
-  <img id="galeriaImg" style="max-width:90%; max-height:90%; border-radius:16px;">
+  <script>
+    const botaoMenu = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+    const backToTop = document.getElementById("backToTop");
 
-</div>
+    botaoMenu.addEventListener("click", () => {
+      menu.classList.toggle("ativo");
+      botaoMenu.textContent = menu.classList.contains("ativo") ? "✕" : "☰";
+    });
 
-<script>
-function abrirGaleria(img) {
-  const modal = document.getElementById("galeriaModal");
-  const imagem = document.getElementById("galeriaImg");
+    document.querySelectorAll('#menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 780) {
+          menu.classList.remove('ativo');
+          botaoMenu.textContent = "☰";
+        }
+      });
+    });
 
-  imagem.src = img;
-  modal.style.display = "flex";
+    function abrirGaleria(img) {
+      const modal = document.getElementById("galeriaModal");
+      const imagem = document.getElementById("galeriaImg");
 
-  setTimeout(() => {
-    modal.classList.add("ativo");
-  }, 10);
-}
+      imagem.src = img;
+      modal.style.display = "flex";
 
-document.getElementById("galeriaModal").onclick = function() {
-  this.classList.remove("ativo");
-  setTimeout(() => {
-    this.style.display = "none";
-  }, 280);
-}
+      setTimeout(() => {
+        modal.classList.add("ativo");
+      }, 10);
+    }
 
-document.getElementById("fecharGaleria").onclick = function(event) {
-  event.stopPropagation();
-  const modal = document.getElementById("galeriaModal");
-  modal.classList.remove("ativo");
+    function fecharGaleria() {
+      const modal = document.getElementById("galeriaModal");
+      modal.classList.remove("ativo");
 
-  setTimeout(() => {
-    modal.style.display = "none";
-  }, 280);
-}
-</script>
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 280);
+    }
 
-<script>
-document.querySelectorAll(".portfolio-card").forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    document.getElementById("galeriaModal").addEventListener("click", fecharGaleria);
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+    document.getElementById("fecharGaleria").addEventListener("click", function(event) {
+      event.stopPropagation();
+      fecharGaleria();
+    });
 
-    const rotateY = ((x - centerX) / centerX) * 12;
-    const rotateX = ((centerY - y) / centerY) * 12;
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
 
-    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
-  });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
 
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
-  });
-});
-</script>
+    if (window.innerWidth > 900) {
+      document.querySelectorAll(".portfolio-card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
 
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateY = ((x - centerX) / centerX) * 8;
+          const rotateX = ((centerY - y) / centerY) * 8;
+
+          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+        });
+      });
+    }
+  </script>
 </body>
 </html>
