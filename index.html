@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -141,7 +142,7 @@
     }
 
     .menu-toggle:hover {
-      background: rgba(255,255,255,.08);
+      background: rgba(255, 255, 255, .08);
     }
 
     nav {
@@ -167,7 +168,7 @@
     }
 
     nav a:hover {
-      background: rgba(255,255,255,.04);
+      background: rgba(255, 255, 255, .04);
       border-color: rgba(125, 211, 252, 0.14);
     }
 
@@ -179,7 +180,7 @@
 
     .btn-outline {
       border: 1px solid rgba(125, 211, 252, 0.16);
-      background: rgba(255,255,255,.03);
+      background: rgba(255, 255, 255, .03);
     }
 
     .btn:hover {
@@ -203,9 +204,9 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 15% 20%, rgba(56,182,255,.12), transparent 0 18%),
-        radial-gradient(circle at 85% 25%, rgba(29,78,216,.10), transparent 0 20%),
-        linear-gradient(135deg, rgba(4,10,24,.98), rgba(6,14,34,.96));
+        radial-gradient(circle at 15% 20%, rgba(56, 182, 255, .12), transparent 0 18%),
+        radial-gradient(circle at 85% 25%, rgba(29, 78, 216, .10), transparent 0 20%),
+        linear-gradient(135deg, rgba(4, 10, 24, .98), rgba(6, 14, 34, .96));
       z-index: 0;
     }
 
@@ -214,8 +215,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(rgba(56,182,255,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56,182,255,.08) 1px, transparent 1px);
+        linear-gradient(rgba(56, 182, 255, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 182, 255, .08) 1px, transparent 1px);
       background-size: 34px 34px;
       opacity: .45;
       z-index: 0;
@@ -239,7 +240,7 @@
       width: fit-content;
       padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(255,255,255,.05);
+      background: rgba(255, 255, 255, .05);
       border: 1px solid rgba(125, 211, 252, 0.18);
       color: var(--accent);
       font-size: 0.92rem;
@@ -252,7 +253,7 @@
       line-height: 1.02;
       margin-bottom: 18px;
       max-width: 720px;
-      text-shadow: 0 8px 28px rgba(0,0,0,.45);
+      text-shadow: 0 8px 28px rgba(0, 0, 0, .45);
     }
 
     .hero h2 span {
@@ -283,7 +284,7 @@
     .metric {
       padding: 18px;
       border-radius: 20px;
-      background: rgba(255,255,255,.04);
+      background: rgba(255, 255, 255, .04);
       border: 1px solid rgba(125, 211, 252, 0.14);
     }
 
@@ -316,11 +317,11 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      background: linear-gradient(135deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .015));
       z-index: 0;
     }
 
-    .tech-panel > * {
+    .tech-panel>* {
       position: relative;
       z-index: 1;
     }
@@ -344,9 +345,9 @@
       display: grid;
       place-items: center;
       font-size: 1.55rem;
-      background: linear-gradient(135deg, rgba(29,78,216,.18), rgba(56,182,255,.08));
+      background: linear-gradient(135deg, rgba(29, 78, 216, .18), rgba(56, 182, 255, .08));
       border: 1px solid rgba(125, 211, 252, 0.16);
-      box-shadow: inset 0 0 16px rgba(56,182,255,.06);
+      box-shadow: inset 0 0 16px rgba(56, 182, 255, .06);
     }
 
     .tech-item h4 {
@@ -385,7 +386,7 @@
       font-style: normal;
       font-size: 1.25rem;
       border: 1px solid rgba(125, 211, 252, 0.16);
-      background: rgba(255,255,255,.03);
+      background: rgba(255, 255, 255, .03);
     }
 
     .trust span {
@@ -525,7 +526,7 @@
       left: -100%;
       width: 60%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
       transform: skewX(-25deg);
       pointer-events: none;
       z-index: 2;
@@ -537,7 +538,7 @@
 
     .portfolio-card:hover {
       transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
     }
 
     .portfolio-card img {
@@ -579,8 +580,13 @@
     }
 
     @keyframes brilho {
-      0% { left: -100%; }
-      100% { left: 150%; }
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 150%;
+      }
     }
 
     .cta {
@@ -595,7 +601,7 @@
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
-      background: linear-gradient(135deg, rgba(29,78,216,.16), rgba(7,15,34,.9));
+      background: linear-gradient(135deg, rgba(29, 78, 216, .16), rgba(7, 15, 34, .9));
       border: 1px solid rgba(125, 211, 252, 0.16);
       box-shadow: var(--shadow);
     }
@@ -611,6 +617,8 @@
       line-height: 1.65;
       max-width: 650px;
     }
+
+
 
     footer {
       padding: 28px 0 40px;
@@ -638,7 +646,7 @@
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
       animation: pulse 2s infinite;
     }
 
@@ -680,6 +688,7 @@
       0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
       }
+
       100% {
         box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
       }
@@ -734,6 +743,7 @@
     }
 
     @media (max-width: 980px) {
+
       .hero-content,
       .about-grid {
         grid-template-columns: 1fr;
@@ -766,7 +776,7 @@
         border-radius: 24px;
         background: rgba(3, 7, 18, 0.98);
         border: 1px solid rgba(125, 211, 252, 0.12);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
         transform: translateY(-10px);
         opacity: 0;
         pointer-events: none;
@@ -889,7 +899,7 @@
       grid-template-columns: 48px 1fr;
       gap: 14px;
       align-items: start;
-      background: linear-gradient(135deg, rgba(29,78,216,.15), rgba(56,182,255,.05));
+      background: linear-gradient(135deg, rgba(29, 78, 216, .15), rgba(56, 182, 255, .05));
       border: 1px solid rgba(125, 211, 252, 0.16);
       color: #dbeafe;
     }
@@ -921,7 +931,7 @@
 
     .product-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(0,0,0,.42);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, .42);
     }
 
     .product-image {
@@ -931,8 +941,8 @@
       place-items: center;
       overflow: hidden;
       background:
-        radial-gradient(circle at 25% 20%, rgba(56,182,255,.22), transparent 0 28%),
-        radial-gradient(circle at 80% 70%, rgba(29,78,216,.26), transparent 0 26%),
+        radial-gradient(circle at 25% 20%, rgba(56, 182, 255, .22), transparent 0 28%),
+        radial-gradient(circle at 80% 70%, rgba(29, 78, 216, .26), transparent 0 26%),
         linear-gradient(135deg, #050b18, #0b1d38);
       border-bottom: 1px solid rgba(125, 211, 252, 0.12);
     }
@@ -942,8 +952,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(56,182,255,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56,182,255,.08) 1px, transparent 1px);
+        linear-gradient(rgba(56, 182, 255, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 182, 255, .08) 1px, transparent 1px);
       background-size: 26px 26px;
       opacity: .6;
     }
@@ -956,8 +966,8 @@
       border-radius: 18px;
       transform: rotate(-8deg);
       background: linear-gradient(135deg, #111827, #1f2937);
-      border: 2px solid rgba(125,211,252,.26);
-      box-shadow: 0 22px 45px rgba(0,0,0,.45), inset 0 0 24px rgba(56,182,255,.08);
+      border: 2px solid rgba(125, 211, 252, .26);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, .45), inset 0 0 24px rgba(56, 182, 255, .08);
       display: grid;
       align-content: center;
       padding: 18px;
@@ -970,12 +980,17 @@
       width: 11px;
       height: 11px;
       border-radius: 50%;
-      background: rgba(125,211,252,.45);
+      background: rgba(125, 211, 252, .45);
       top: 13px;
     }
 
-    .ssd-visual::before { left: 13px; }
-    .ssd-visual::after { right: 13px; }
+    .ssd-visual::before {
+      left: 13px;
+    }
+
+    .ssd-visual::after {
+      right: 13px;
+    }
 
     .ssd-visual strong {
       font-size: 1.8rem;
@@ -998,9 +1013,9 @@
       height: 112px;
       border-radius: 24px;
       transform: rotate(-5deg);
-      background: linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,64,175,.45));
-      border: 2px solid rgba(125,211,252,.26);
-      box-shadow: 0 22px 45px rgba(0,0,0,.45), inset 0 0 24px rgba(56,182,255,.08);
+      background: linear-gradient(135deg, rgba(15, 23, 42, .96), rgba(30, 64, 175, .45));
+      border: 2px solid rgba(125, 211, 252, .26);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, .45), inset 0 0 24px rgba(56, 182, 255, .08);
       display: grid;
       place-items: center;
       text-align: center;
@@ -1012,7 +1027,7 @@
       font-size: 2.4rem;
       line-height: 1;
       margin-bottom: 8px;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .35));
     }
 
     .product-visual span {
@@ -1031,8 +1046,8 @@
       display: inline-flex;
       padding: 7px 11px;
       border-radius: 999px;
-      background: rgba(56,182,255,.09);
-      border: 1px solid rgba(125,211,252,.14);
+      background: rgba(56, 182, 255, .09);
+      border: 1px solid rgba(125, 211, 252, .14);
       color: var(--accent);
       font-size: .78rem;
       font-weight: 700;
@@ -1066,7 +1081,7 @@
     .product-price strong {
       font-size: 2rem;
       color: var(--primary-2);
-      text-shadow: 0 0 18px rgba(56,182,255,.18);
+      text-shadow: 0 0 18px rgba(56, 182, 255, .18);
     }
 
     .product-actions {
@@ -1079,7 +1094,7 @@
       position: fixed;
       inset: 0;
       z-index: 10050;
-      background: rgba(0,0,0,.84);
+      background: rgba(0, 0, 0, .84);
       backdrop-filter: blur(8px);
       padding: 18px;
       align-items: center;
@@ -1094,9 +1109,9 @@
       width: min(440px, 96vw);
       border-radius: 28px;
       padding: 24px;
-      background: linear-gradient(135deg, rgba(7,18,37,.98), rgba(3,7,18,.98));
-      border: 1px solid rgba(125,211,252,.18);
-      box-shadow: 0 30px 90px rgba(0,0,0,.65);
+      background: linear-gradient(135deg, rgba(7, 18, 37, .98), rgba(3, 7, 18, .98));
+      border: 1px solid rgba(125, 211, 252, .18);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .65);
       color: var(--text);
       text-align: center;
       position: relative;
@@ -1106,7 +1121,7 @@
       position: absolute;
       top: -16px;
       right: -16px;
-      border: 2px solid rgba(255,255,255,.22);
+      border: 2px solid rgba(255, 255, 255, .22);
       width: 46px;
       height: 46px;
       border-radius: 50%;
@@ -1119,7 +1134,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 12px 30px rgba(0,0,0,.55);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .55);
       z-index: 5;
     }
 
@@ -1155,8 +1170,8 @@
     }
 
     .pix-info {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(125,211,252,.12);
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(125, 211, 252, .12);
       border-radius: 18px;
       padding: 14px;
       margin: 14px 0;
@@ -1170,8 +1185,8 @@
       width: 100%;
       min-height: 82px;
       resize: none;
-      border: 1px solid rgba(125,211,252,.16);
-      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(125, 211, 252, .16);
+      background: rgba(255, 255, 255, .04);
       color: #dbeafe;
       border-radius: 16px;
       padding: 12px;
@@ -1188,12 +1203,18 @@
     }
 
     @media (max-width: 520px) {
-      .store-alert { grid-template-columns: 1fr; }
-      #pixQrCode { width: 190px !important; height: 190px !important; }
-    }
+      .store-alert {
+        grid-template-columns: 1fr;
+      }
 
+      #pixQrCode {
+        width: 190px !important;
+        height: 190px !important;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container topbar">
@@ -1478,7 +1499,8 @@
         <div class="icon-box">💳</div>
         <div>
           <strong>Compra simples e segura pelo WhatsApp</strong>
-          <p>O pedido não é finalizado automaticamente. Depois do PIX, clique em “Enviar comprovante” e combine retirada ou entrega direto comigo.</p>
+          <p>O pedido não é finalizado automaticamente. Depois do PIX, clique em “Enviar comprovante” e combine retirada
+            ou entrega direto comigo.</p>
         </div>
       </div>
 
@@ -1497,7 +1519,8 @@
             <div class="product-price"><small>R$</small><strong>220</strong><small> ilustrativo</small></div>
             <div class="product-actions">
               <button class="btn btn-primary" onclick="abrirPix('SSD 128GB', 220)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('SSD 128GB')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('SSD 128GB')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1516,7 +1539,8 @@
             <div class="product-price"><small>R$</small><strong>300</strong><small> ilustrativo</small></div>
             <div class="product-actions">
               <button class="btn btn-primary" onclick="abrirPix('SSD 240GB', 300)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('SSD 240GB')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('SSD 240GB')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1535,7 +1559,8 @@
             <div class="product-price"><small>R$</small><strong>180</strong><small> ilustrativo</small></div>
             <div class="product-actions">
               <button class="btn btn-primary" onclick="abrirPix('Memória RAM 8GB', 180)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Memória RAM 8GB')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Memória RAM 8GB')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1554,7 +1579,8 @@
             <div class="product-price"><small>R$</small><strong>80</strong><small> ilustrativo</small></div>
             <div class="product-actions">
               <button class="btn btn-primary" onclick="abrirPix('Cooler para PC', 80)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Cooler para PC')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Cooler para PC')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1573,7 +1599,8 @@
             <div class="product-price"><small>R$</small><strong>70</strong><small> ilustrativo</small></div>
             <div class="product-actions">
               <button class="btn btn-primary" onclick="abrirPix('Teclado USB', 70)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Teclado USB')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Teclado USB')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1592,7 +1619,8 @@
             <div class="product-price"><small>R$</small><strong>45</strong><small> ilustrativo</small></div>
             <div class="product-actions">
               <button class="btn btn-primary" onclick="abrirPix('Mouse USB', 45)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Mouse USB')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Mouse USB')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1610,8 +1638,10 @@
             <p>Ideal para chamadas, estudos, atendimento online e reuniões.</p>
             <div class="product-price"><small>R$</small><strong>120</strong><small> ilustrativo</small></div>
             <div class="product-actions">
-              <button class="btn btn-primary" onclick="abrirPix('Headphone com microfone', 120)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Headphone com microfone')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-primary" onclick="abrirPix('Headphone com microfone', 120)">Comprar com
+                PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Headphone com microfone')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1630,7 +1660,8 @@
             <div class="product-price"><small>R$</small><strong>180</strong><small> ilustrativo</small></div>
             <div class="product-actions">
               <button class="btn btn-primary" onclick="abrirPix('Gabinete simples', 180)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Gabinete simples')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Gabinete simples')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1649,7 +1680,8 @@
             <div class="product-price"><small>R$</small><strong>320</strong><small> ilustrativo</small></div>
             <div class="product-actions">
               <button class="btn btn-primary" onclick="abrirPix('Gabinete Gamer', 320)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Gabinete Gamer')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Gabinete Gamer')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1668,7 +1700,8 @@
             <div class="product-price"><small>R$</small><strong>160</strong><small> ilustrativo</small></div>
             <div class="product-actions">
               <button class="btn btn-primary" onclick="abrirPix('Fonte ATX', 160)">Comprar com PIX</button>
-              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Fonte ATX')">Tirar dúvida no WhatsApp</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Fonte ATX')">Tirar dúvida no
+                WhatsApp</button>
             </div>
           </div>
         </article>
@@ -1716,228 +1749,251 @@
       </div>
     </div>
   </section>
+  </section> <!-- fim da loja -->
+
+  <!-- AQUI VAI A LOCALIZAÇÃO -->
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span>Localização</span>
+          <h3>Atendemos em Barreirinha - AM</h3>
+        </div>
+        <p>Entrega combinada via WhatsApp ou retirada no local.</p>
+      </div>
+
+      <div style="margin-top:20px; border-radius:20px; overflow:hidden;">
+        <iframe src="https://www.google.com/maps?q=Barreirinha,AM&output=embed" width="100%" height="300"
+          style="border:0;">
+        </iframe>
+      </div>
+
+      📍 Barreirinha - AM
+      🕒 Atendimento sob agendamento
+      🚚 Entrega disponível na cidade
+    </div>
+  </section>
 
   <footer>
-    <div class="container footer-grid">
-      <p>© 2026 INFORBAE • Assistência Técnica e Soluções em Tecnologia</p>
-      <p>Profissionalismo que faz a diferença.</p>
+    <footer>
+      <div class="container footer-grid">
+        <p>© 2026 INFORBAE • Assistência Técnica e Soluções em Tecnologia</p>
+        <p>Profissionalismo que faz a diferença.</p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+    <a href="https://wa.me/5592992077020?text=Olá,%20vim%20pelo%20site%20da%20INFORBAE%20e%20quero%20um%20orçamento."
+      class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M20.52 3.48A11.8 11.8 0 0 0 12.06 0C5.54 0 .25 5.29.25 11.81c0 2.08.54 4.11 1.57 5.89L0 24l6.5-1.7a11.8 11.8 0 0 0 5.56 1.42h.01c6.52 0 11.81-5.29 11.81-11.81 0-3.15-1.23-6.11-3.36-8.43Z" />
+      </svg>
+    </a>
+
+    <div id="galeriaModal" class="galeria-modal">
+      <span id="fecharGaleria" class="galeria-fechar">&times;</span>
+      <img id="galeriaImg" class="galeria-img" alt="Imagem ampliada">
     </div>
-  </footer>
 
-  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 
-  <a
-    href="https://wa.me/5592992077020?text=Olá,%20vim%20pelo%20site%20da%20INFORBAE%20e%20quero%20um%20orçamento."
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Falar no WhatsApp"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M20.52 3.48A11.8 11.8 0 0 0 12.06 0C5.54 0 .25 5.29.25 11.81c0 2.08.54 4.11 1.57 5.89L0 24l6.5-1.7a11.8 11.8 0 0 0 5.56 1.42h.01c6.52 0 11.81-5.29 11.81-11.81 0-3.15-1.23-6.11-3.36-8.43Z"/>
-    </svg>
-  </a>
+    <script>
+      const botaoMenu = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const backToTop = document.getElementById("backToTop");
 
-  <div id="galeriaModal" class="galeria-modal">
-    <span id="fecharGaleria" class="galeria-fechar">&times;</span>
-    <img id="galeriaImg" class="galeria-img" alt="Imagem ampliada">
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-
-  <script>
-    const botaoMenu = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-    const backToTop = document.getElementById("backToTop");
-
-    botaoMenu.addEventListener("click", () => {
-      menu.classList.toggle("ativo");
-      botaoMenu.textContent = menu.classList.contains("ativo") ? "✕" : "☰";
-    });
-
-    document.querySelectorAll('#menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 780) {
-          menu.classList.remove('ativo');
-          botaoMenu.textContent = "☰";
-        }
+      botaoMenu.addEventListener("click", () => {
+        menu.classList.toggle("ativo");
+        botaoMenu.textContent = menu.classList.contains("ativo") ? "✕" : "☰";
       });
-    });
 
-    function abrirGaleria(img) {
-      const modal = document.getElementById("galeriaModal");
-      const imagem = document.getElementById("galeriaImg");
-
-      imagem.src = img;
-      modal.style.display = "flex";
-
-      setTimeout(() => {
-        modal.classList.add("ativo");
-      }, 10);
-    }
-
-    function fecharGaleria() {
-      const modal = document.getElementById("galeriaModal");
-      modal.classList.remove("ativo");
-
-      setTimeout(() => {
-        modal.style.display = "none";
-      }, 280);
-    }
-
-    document.getElementById("galeriaModal").addEventListener("click", fecharGaleria);
-
-    document.getElementById("fecharGaleria").addEventListener("click", function(event) {
-      event.stopPropagation();
-      fecharGaleria();
-    });
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTop.classList.add("show");
-      } else {
-        backToTop.classList.remove("show");
-      }
-    });
-
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
-
-    if (window.innerWidth > 900) {
-      document.querySelectorAll(".portfolio-card").forEach((card) => {
-        card.addEventListener("mousemove", (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          const rotateY = ((x - centerX) / centerX) * 8;
-          const rotateX = ((centerY - y) / centerY) * 8;
-
-          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-        });
-
-        card.addEventListener("mouseleave", () => {
-          card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+      document.querySelectorAll('#menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 780) {
+            menu.classList.remove('ativo');
+            botaoMenu.textContent = "☰";
+          }
         });
       });
-    }
 
+      function abrirGaleria(img) {
+        const modal = document.getElementById("galeriaModal");
+        const imagem = document.getElementById("galeriaImg");
 
-    /* ===== PIX LOJA INFORBAE ===== */
-    const PIX_CHAVE = "65690841000113";
-    const PIX_NOME = "INFORBAE";
-    const PIX_CIDADE = "BARREIRINHA";
-    const WHATSAPP_INFORBAE = "5592992077020";
-    let produtoSelecionado = "";
-    let precoSelecionado = 0;
-    let pixAtual = "";
+        imagem.src = img;
+        modal.style.display = "flex";
 
-    function removerAcentos(texto) {
-      return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    }
-
-    function campoPix(id, valor) {
-      const tamanho = String(valor.length).padStart(2, "0");
-      return id + tamanho + valor;
-    }
-
-    function crc16(payload) {
-      let polinomio = 0x1021;
-      let resultado = 0xFFFF;
-
-      for (let offset = 0; offset < payload.length; offset++) {
-        resultado ^= payload.charCodeAt(offset) << 8;
-
-        for (let bitwise = 0; bitwise < 8; bitwise++) {
-          if ((resultado <<= 1) & 0x10000) resultado ^= polinomio;
-          resultado &= 0xFFFF;
-        }
+        setTimeout(() => {
+          modal.classList.add("ativo");
+        }, 10);
       }
 
-      return resultado.toString(16).toUpperCase().padStart(4, "0");
-    }
+      function fecharGaleria() {
+        const modal = document.getElementById("galeriaModal");
+        modal.classList.remove("ativo");
 
-    function gerarPixCopiaCola(valor, descricao) {
-      const valorFormatado = Number(valor).toFixed(2);
-      const merchantAccount = campoPix("00", "BR.GOV.BCB.PIX") + campoPix("01", PIX_CHAVE) + campoPix("02", removerAcentos(descricao).slice(0, 25));
-      const txid = "INFORBAE" + Date.now().toString().slice(-8);
-      const additionalData = campoPix("05", txid.slice(0, 25));
+        setTimeout(() => {
+          modal.style.display = "none";
+        }, 280);
+      }
 
-      let payload = "";
-      payload += campoPix("00", "01");
-      payload += campoPix("26", merchantAccount);
-      payload += campoPix("52", "0000");
-      payload += campoPix("53", "986");
-      payload += campoPix("54", valorFormatado);
-      payload += campoPix("58", "BR");
-      payload += campoPix("59", removerAcentos(PIX_NOME).slice(0, 25));
-      payload += campoPix("60", removerAcentos(PIX_CIDADE).slice(0, 15));
-      payload += campoPix("62", additionalData);
-      payload += "6304";
+      document.getElementById("galeriaModal").addEventListener("click", fecharGaleria);
 
-      return payload + crc16(payload);
-    }
-
-    function abrirPix(produto, preco) {
-      produtoSelecionado = produto;
-      precoSelecionado = preco;
-      pixAtual = gerarPixCopiaCola(preco, produto);
-
-      document.getElementById("pixModal").classList.add("ativo");
-      document.getElementById("pixModal").setAttribute("aria-hidden", "false");
-      document.getElementById("pixInfo").innerHTML = `<strong>${produto}</strong><br>Valor: <strong>R$ ${preco.toFixed(2).replace('.', ',')}</strong><br>PIX CNPJ: 65.690.841/0001-13`;
-      document.getElementById("pixCopiaCola").value = pixAtual;
-
-      const canvas = document.getElementById("pixQrCode");
-      QRCode.toCanvas(canvas, pixAtual, { width: 220, margin: 1 }, function (error) {
-        if (error) console.error(error);
+      document.getElementById("fecharGaleria").addEventListener("click", function (event) {
+        event.stopPropagation();
+        fecharGaleria();
       });
-    }
 
-    function fecharPix() {
-      document.getElementById("pixModal").classList.remove("ativo");
-      document.getElementById("pixModal").setAttribute("aria-hidden", "true");
-    }
-
-    function copiarPix() {
-      const campo = document.getElementById("pixCopiaCola");
-      campo.select();
-      campo.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(campo.value).then(() => {
-        alert("PIX copia e cola copiado com sucesso!");
-      }).catch(() => {
-        document.execCommand("copy");
-        alert("PIX copia e cola copiado com sucesso!");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
       });
-    }
 
-    function enviarComprovante() {
-      const mensagem = `Olá, vim pelo site da INFORBAE. Comprei ${produtoSelecionado} no valor de R$ ${precoSelecionado.toFixed(2).replace('.', ',')}. Já fiz o PIX e vou enviar o comprovante. Quero combinar a entrega/retirada.`;
-      const url = "https://wa.me/" + WHATSAPP_INFORBAE + "?text=" + encodeURIComponent(mensagem);
-      window.open(url, "_blank");
-    }
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
 
-    function tirarDuvidaProduto(produto) {
-      const mensagem = `Olá, vim pelo site da INFORBAE. Quero tirar uma dúvida sobre o produto: ${produto}.`;
-      const url = "https://wa.me/" + WHATSAPP_INFORBAE + "?text=" + encodeURIComponent(mensagem);
-      window.open(url, "_blank");
-    }
+      if (window.innerWidth > 900) {
+        document.querySelectorAll(".portfolio-card").forEach((card) => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-    document.getElementById("pixModal").addEventListener("click", function(event) {
-      if (event.target.id === "pixModal") fecharPix();
-    });
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
 
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") fecharPix();
-    });
+            const rotateY = ((x - centerX) / centerX) * 8;
+            const rotateX = ((centerY - y) / centerY) * 8;
 
-  </script>
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+          });
+
+          card.addEventListener("mouseleave", () => {
+            card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+          });
+        });
+      }
+
+
+      /* ===== PIX LOJA INFORBAE ===== */
+      const PIX_CHAVE = "65690841000113";
+      const PIX_NOME = "INFORBAE";
+      const PIX_CIDADE = "BARREIRINHA";
+      const WHATSAPP_INFORBAE = "5592992077020";
+      let produtoSelecionado = "";
+      let precoSelecionado = 0;
+      let pixAtual = "";
+
+      function removerAcentos(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+
+      function campoPix(id, valor) {
+        const tamanho = String(valor.length).padStart(2, "0");
+        return id + tamanho + valor;
+      }
+
+      function crc16(payload) {
+        let polinomio = 0x1021;
+        let resultado = 0xFFFF;
+
+        for (let offset = 0; offset < payload.length; offset++) {
+          resultado ^= payload.charCodeAt(offset) << 8;
+
+          for (let bitwise = 0; bitwise < 8; bitwise++) {
+            if ((resultado <<= 1) & 0x10000) resultado ^= polinomio;
+            resultado &= 0xFFFF;
+          }
+        }
+
+        return resultado.toString(16).toUpperCase().padStart(4, "0");
+      }
+
+      function gerarPixCopiaCola(valor, descricao) {
+        const valorFormatado = Number(valor).toFixed(2);
+        const merchantAccount = campoPix("00", "BR.GOV.BCB.PIX") + campoPix("01", PIX_CHAVE) + campoPix("02", removerAcentos(descricao).slice(0, 25));
+        const txid = "INFORBAE" + Date.now().toString().slice(-8);
+        const additionalData = campoPix("05", txid.slice(0, 25));
+
+        let payload = "";
+        payload += campoPix("00", "01");
+        payload += campoPix("26", merchantAccount);
+        payload += campoPix("52", "0000");
+        payload += campoPix("53", "986");
+        payload += campoPix("54", valorFormatado);
+        payload += campoPix("58", "BR");
+        payload += campoPix("59", removerAcentos(PIX_NOME).slice(0, 25));
+        payload += campoPix("60", removerAcentos(PIX_CIDADE).slice(0, 15));
+        payload += campoPix("62", additionalData);
+        payload += "6304";
+
+        return payload + crc16(payload);
+      }
+
+      function abrirPix(produto, preco) {
+        produtoSelecionado = produto;
+        precoSelecionado = preco;
+        pixAtual = gerarPixCopiaCola(preco, produto);
+
+        document.getElementById("pixModal").classList.add("ativo");
+        document.getElementById("pixModal").setAttribute("aria-hidden", "false");
+        document.getElementById("pixInfo").innerHTML = `<strong>${produto}</strong><br>Valor: <strong>R$ ${preco.toFixed(2).replace('.', ',')}</strong><br>PIX CNPJ: 65.690.841/0001-13`;
+        document.getElementById("pixCopiaCola").value = pixAtual;
+
+        const canvas = document.getElementById("pixQrCode");
+        QRCode.toCanvas(canvas, pixAtual, { width: 220, margin: 1 }, function (error) {
+          if (error) console.error(error);
+        });
+      }
+
+      function fecharPix() {
+        document.getElementById("pixModal").classList.remove("ativo");
+        document.getElementById("pixModal").setAttribute("aria-hidden", "true");
+      }
+
+      function copiarPix() {
+        const campo = document.getElementById("pixCopiaCola");
+        campo.select();
+        campo.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(campo.value).then(() => {
+          alert("PIX copia e cola copiado com sucesso!");
+        }).catch(() => {
+          document.execCommand("copy");
+          alert("PIX copia e cola copiado com sucesso!");
+        });
+      }
+
+      function enviarComprovante() {
+        const mensagem = `Olá, vim pelo site da INFORBAE. Comprei ${produtoSelecionado} no valor de R$ ${precoSelecionado.toFixed(2).replace('.', ',')}. Já fiz o PIX e vou enviar o comprovante. Quero combinar a entrega/retirada.`;
+        const url = "https://wa.me/" + WHATSAPP_INFORBAE + "?text=" + encodeURIComponent(mensagem);
+        window.open(url, "_blank");
+      }
+
+      function tirarDuvidaProduto(produto) {
+        const mensagem = `Olá, vim pelo site da INFORBAE. Quero tirar uma dúvida sobre o produto: ${produto}.`;
+        const url = "https://wa.me/" + WHATSAPP_INFORBAE + "?text=" + encodeURIComponent(mensagem);
+        window.open(url, "_blank");
+      }
+
+      document.getElementById("pixModal").addEventListener("click", function (event) {
+        if (event.target.id === "pixModal") fecharPix();
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") fecharPix();
+      });
+
+    </script>
 </body>
+
 </html>
