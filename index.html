@@ -874,6 +874,324 @@
         font-size: 0.84rem;
       }
     }
+
+
+    /* ===== LOJA INFORBAE ===== */
+    .store-section {
+      padding: 40px 0 80px;
+    }
+
+    .store-alert {
+      margin-bottom: 22px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: start;
+      background: linear-gradient(135deg, rgba(29,78,216,.15), rgba(56,182,255,.05));
+      border: 1px solid rgba(125, 211, 252, 0.16);
+      color: #dbeafe;
+    }
+
+    .store-alert strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #ffffff;
+    }
+
+    .store-alert p {
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      border-radius: 26px;
+      overflow: hidden;
+      transition: .28s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 60px rgba(0,0,0,.42);
+    }
+
+    .product-image {
+      height: 190px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(56,182,255,.22), transparent 0 28%),
+        radial-gradient(circle at 80% 70%, rgba(29,78,216,.26), transparent 0 26%),
+        linear-gradient(135deg, #050b18, #0b1d38);
+      border-bottom: 1px solid rgba(125, 211, 252, 0.12);
+    }
+
+    .product-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56,182,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,182,255,.08) 1px, transparent 1px);
+      background-size: 26px 26px;
+      opacity: .6;
+    }
+
+    .ssd-visual {
+      position: relative;
+      z-index: 1;
+      width: 178px;
+      height: 112px;
+      border-radius: 18px;
+      transform: rotate(-8deg);
+      background: linear-gradient(135deg, #111827, #1f2937);
+      border: 2px solid rgba(125,211,252,.26);
+      box-shadow: 0 22px 45px rgba(0,0,0,.45), inset 0 0 24px rgba(56,182,255,.08);
+      display: grid;
+      align-content: center;
+      padding: 18px;
+    }
+
+    .ssd-visual::before,
+    .ssd-visual::after {
+      content: "";
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: rgba(125,211,252,.45);
+      top: 13px;
+    }
+
+    .ssd-visual::before { left: 13px; }
+    .ssd-visual::after { right: 13px; }
+
+    .ssd-visual strong {
+      font-size: 1.8rem;
+      color: #38b6ff;
+      letter-spacing: 1px;
+    }
+
+    .ssd-visual span {
+      color: #e0f2fe;
+      font-size: .82rem;
+      margin-top: 4px;
+    }
+
+
+
+    .product-visual {
+      position: relative;
+      z-index: 1;
+      width: 178px;
+      height: 112px;
+      border-radius: 24px;
+      transform: rotate(-5deg);
+      background: linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,64,175,.45));
+      border: 2px solid rgba(125,211,252,.26);
+      box-shadow: 0 22px 45px rgba(0,0,0,.45), inset 0 0 24px rgba(56,182,255,.08);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 16px;
+    }
+
+    .product-visual strong {
+      display: block;
+      font-size: 2.4rem;
+      line-height: 1;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+    }
+
+    .product-visual span {
+      color: #e0f2fe;
+      font-size: .86rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .product-content {
+      padding: 22px;
+    }
+
+    .product-tag {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(56,182,255,.09);
+      border: 1px solid rgba(125,211,252,.14);
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .product-content h4 {
+      font-size: 1.32rem;
+      margin-bottom: 8px;
+    }
+
+    .product-content p {
+      color: var(--muted);
+      line-height: 1.58;
+      font-size: .95rem;
+      margin-bottom: 16px;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin: 12px 0 16px;
+    }
+
+    .product-price small {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .product-price strong {
+      font-size: 2rem;
+      color: var(--primary-2);
+      text-shadow: 0 0 18px rgba(56,182,255,.18);
+    }
+
+    .product-actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .pix-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10050;
+      background: rgba(0,0,0,.84);
+      backdrop-filter: blur(8px);
+      padding: 18px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pix-modal.ativo {
+      display: flex;
+    }
+
+    .pix-box {
+      width: min(440px, 96vw);
+      border-radius: 28px;
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(7,18,37,.98), rgba(3,7,18,.98));
+      border: 1px solid rgba(125,211,252,.18);
+      box-shadow: 0 30px 90px rgba(0,0,0,.65);
+      color: var(--text);
+      text-align: center;
+      position: relative;
+    }
+
+    .pix-close {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      border: 2px solid rgba(255,255,255,.22);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ef4444, #b91c1c);
+      color: white;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,.55);
+      z-index: 5;
+    }
+
+    .pix-close:hover {
+      transform: scale(1.08);
+      filter: brightness(1.08);
+    }
+
+    .pix-box h3 {
+      font-size: 1.55rem;
+      margin-bottom: 6px;
+    }
+
+    .pix-box .pix-subtitle {
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 16px;
+      font-size: .95rem;
+    }
+
+    .qr-area {
+      width: fit-content;
+      margin: 0 auto 14px;
+      padding: 12px;
+      border-radius: 20px;
+      background: #fff;
+    }
+
+    #pixQrCode {
+      display: block;
+      width: 220px !important;
+      height: 220px !important;
+    }
+
+    .pix-info {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(125,211,252,.12);
+      border-radius: 18px;
+      padding: 14px;
+      margin: 14px 0;
+      text-align: left;
+      color: #dbeafe;
+      line-height: 1.65;
+      font-size: .94rem;
+    }
+
+    .pix-copy {
+      width: 100%;
+      min-height: 82px;
+      resize: none;
+      border: 1px solid rgba(125,211,252,.16);
+      background: rgba(255,255,255,.04);
+      color: #dbeafe;
+      border-radius: 16px;
+      padding: 12px;
+      font-size: .78rem;
+      outline: none;
+    }
+
+    .pix-small {
+      display: block;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 520px) {
+      .store-alert { grid-template-columns: 1fr; }
+      #pixQrCode { width: 190px !important; height: 190px !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -893,6 +1211,7 @@
 
       <nav id="menu">
         <a href="#servicos">Serviços</a>
+        <a href="#loja">Loja</a>
         <a href="#sobre">Sobre</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#contato" class="btn btn-primary">Falar no WhatsApp</a>
@@ -1143,6 +1462,243 @@
     </div>
   </section>
 
+
+
+  <section class="store-section" id="loja">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span>Loja INFORBAE</span>
+          <h3>Componentes para deixar seu computador mais rápido</h3>
+        </div>
+        <p>Escolha o produto, pague via PIX com QR Code e envie o comprovante pelo WhatsApp para combinar a entrega.</p>
+      </div>
+
+      <div class="store-alert glass">
+        <div class="icon-box">💳</div>
+        <div>
+          <strong>Compra simples e segura pelo WhatsApp</strong>
+          <p>O pedido não é finalizado automaticamente. Depois do PIX, clique em “Enviar comprovante” e combine retirada ou entrega direto comigo.</p>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="ssd-visual">
+              <strong>128GB</strong>
+              <span>SSD SATA • Upgrade</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Mais velocidade</span>
+            <h4>SSD 128GB</h4>
+            <p>Ideal para deixar computador ou notebook mais rápido no dia a dia.</p>
+            <div class="product-price"><small>R$</small><strong>220</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('SSD 128GB', 220)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('SSD 128GB')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="ssd-visual">
+              <strong>240GB</strong>
+              <span>SSD SATA • Upgrade</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Mais espaço</span>
+            <h4>SSD 240GB</h4>
+            <p>Boa opção para sistema, programas e arquivos principais com mais desempenho.</p>
+            <div class="product-price"><small>R$</small><strong>300</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('SSD 240GB', 300)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('SSD 240GB')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="product-visual">
+              <strong>🧠</strong>
+              <span>Memória RAM</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Upgrade</span>
+            <h4>Memória RAM 8GB</h4>
+            <p>Mais desempenho para abrir programas, navegar e trabalhar com mais fluidez.</p>
+            <div class="product-price"><small>R$</small><strong>180</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('Memória RAM 8GB', 180)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Memória RAM 8GB')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="product-visual">
+              <strong>❄️</strong>
+              <span>Cooler</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Refrigeração</span>
+            <h4>Cooler para PC</h4>
+            <p>Ajuda no controle de temperatura e melhora a estabilidade do computador.</p>
+            <div class="product-price"><small>R$</small><strong>80</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('Cooler para PC', 80)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Cooler para PC')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="product-visual">
+              <strong>⌨️</strong>
+              <span>Teclado</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Periférico</span>
+            <h4>Teclado USB</h4>
+            <p>Teclado prático para uso em escritório, estudos e atendimento.</p>
+            <div class="product-price"><small>R$</small><strong>70</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('Teclado USB', 70)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Teclado USB')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="product-visual">
+              <strong>🖱️</strong>
+              <span>Mouse</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Periférico</span>
+            <h4>Mouse USB</h4>
+            <p>Mouse confortável para trabalho, estudo e uso diário.</p>
+            <div class="product-price"><small>R$</small><strong>45</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('Mouse USB', 45)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Mouse USB')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="product-visual">
+              <strong>🎧</strong>
+              <span>Headphone</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Áudio</span>
+            <h4>Headphone com microfone</h4>
+            <p>Ideal para chamadas, estudos, atendimento online e reuniões.</p>
+            <div class="product-price"><small>R$</small><strong>120</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('Headphone com microfone', 120)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Headphone com microfone')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="product-visual">
+              <strong>🖥️</strong>
+              <span>Gabinete</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Estrutura</span>
+            <h4>Gabinete simples</h4>
+            <p>Gabinete para montagem, reposição ou organização do computador.</p>
+            <div class="product-price"><small>R$</small><strong>180</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('Gabinete simples', 180)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Gabinete simples')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="product-visual">
+              <strong>🎮</strong>
+              <span>Gamer</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Linha gamer</span>
+            <h4>Gabinete Gamer</h4>
+            <p>Visual moderno para setup gamer com melhor aparência e organização.</p>
+            <div class="product-price"><small>R$</small><strong>320</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('Gabinete Gamer', 320)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Gabinete Gamer')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card glass">
+          <div class="product-image">
+            <div class="product-visual">
+              <strong>⚡</strong>
+              <span>Fonte ATX</span>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="product-tag">Energia</span>
+            <h4>Fonte ATX</h4>
+            <p>Fonte para computadores, ideal para manutenção e substituição técnica.</p>
+            <div class="product-price"><small>R$</small><strong>160</strong><small> ilustrativo</small></div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="abrirPix('Fonte ATX', 160)">Comprar com PIX</button>
+              <button class="btn btn-outline" onclick="tirarDuvidaProduto('Fonte ATX')">Tirar dúvida no WhatsApp</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="pix-modal" id="pixModal" aria-hidden="true">
+    <div class="pix-box">
+      <button class="pix-close" onclick="fecharPix()" aria-label="Fechar">×</button>
+      <h3>Pagamento via PIX</h3>
+      <p class="pix-subtitle">Escaneie o QR Code ou copie o código PIX. Depois envie o comprovante no WhatsApp.</p>
+
+      <div class="qr-area">
+        <canvas id="pixQrCode"></canvas>
+      </div>
+
+      <div class="pix-info" id="pixInfo"></div>
+
+      <textarea id="pixCopiaCola" class="pix-copy" readonly></textarea>
+
+      <div class="product-actions" style="margin-top: 12px;">
+        <button class="btn btn-primary" onclick="copiarPix()">Copiar PIX copia e cola</button>
+        <button class="btn btn-outline" onclick="enviarComprovante()">Enviar comprovante no WhatsApp</button>
+      </div>
+
+      <small class="pix-small">Chave PIX CNPJ: 65.690.841/0001-13 • Nome: INFORBAE • Cidade: Barreirinha-AM</small>
+    </div>
+  </div>
+
   <section class="cta" id="contato">
     <div class="container">
       <div class="cta-box">
@@ -1186,6 +1742,8 @@
     <span id="fecharGaleria" class="galeria-fechar">&times;</span>
     <img id="galeriaImg" class="galeria-img" alt="Imagem ampliada">
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 
   <script>
     const botaoMenu = document.getElementById("menu-toggle");
@@ -1270,6 +1828,116 @@
         });
       });
     }
+
+
+    /* ===== PIX LOJA INFORBAE ===== */
+    const PIX_CHAVE = "65690841000113";
+    const PIX_NOME = "INFORBAE";
+    const PIX_CIDADE = "BARREIRINHA";
+    const WHATSAPP_INFORBAE = "5592992077020";
+    let produtoSelecionado = "";
+    let precoSelecionado = 0;
+    let pixAtual = "";
+
+    function removerAcentos(texto) {
+      return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function campoPix(id, valor) {
+      const tamanho = String(valor.length).padStart(2, "0");
+      return id + tamanho + valor;
+    }
+
+    function crc16(payload) {
+      let polinomio = 0x1021;
+      let resultado = 0xFFFF;
+
+      for (let offset = 0; offset < payload.length; offset++) {
+        resultado ^= payload.charCodeAt(offset) << 8;
+
+        for (let bitwise = 0; bitwise < 8; bitwise++) {
+          if ((resultado <<= 1) & 0x10000) resultado ^= polinomio;
+          resultado &= 0xFFFF;
+        }
+      }
+
+      return resultado.toString(16).toUpperCase().padStart(4, "0");
+    }
+
+    function gerarPixCopiaCola(valor, descricao) {
+      const valorFormatado = Number(valor).toFixed(2);
+      const merchantAccount = campoPix("00", "BR.GOV.BCB.PIX") + campoPix("01", PIX_CHAVE) + campoPix("02", removerAcentos(descricao).slice(0, 25));
+      const txid = "INFORBAE" + Date.now().toString().slice(-8);
+      const additionalData = campoPix("05", txid.slice(0, 25));
+
+      let payload = "";
+      payload += campoPix("00", "01");
+      payload += campoPix("26", merchantAccount);
+      payload += campoPix("52", "0000");
+      payload += campoPix("53", "986");
+      payload += campoPix("54", valorFormatado);
+      payload += campoPix("58", "BR");
+      payload += campoPix("59", removerAcentos(PIX_NOME).slice(0, 25));
+      payload += campoPix("60", removerAcentos(PIX_CIDADE).slice(0, 15));
+      payload += campoPix("62", additionalData);
+      payload += "6304";
+
+      return payload + crc16(payload);
+    }
+
+    function abrirPix(produto, preco) {
+      produtoSelecionado = produto;
+      precoSelecionado = preco;
+      pixAtual = gerarPixCopiaCola(preco, produto);
+
+      document.getElementById("pixModal").classList.add("ativo");
+      document.getElementById("pixModal").setAttribute("aria-hidden", "false");
+      document.getElementById("pixInfo").innerHTML = `<strong>${produto}</strong><br>Valor: <strong>R$ ${preco.toFixed(2).replace('.', ',')}</strong><br>PIX CNPJ: 65.690.841/0001-13`;
+      document.getElementById("pixCopiaCola").value = pixAtual;
+
+      const canvas = document.getElementById("pixQrCode");
+      QRCode.toCanvas(canvas, pixAtual, { width: 220, margin: 1 }, function (error) {
+        if (error) console.error(error);
+      });
+    }
+
+    function fecharPix() {
+      document.getElementById("pixModal").classList.remove("ativo");
+      document.getElementById("pixModal").setAttribute("aria-hidden", "true");
+    }
+
+    function copiarPix() {
+      const campo = document.getElementById("pixCopiaCola");
+      campo.select();
+      campo.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(campo.value).then(() => {
+        alert("PIX copia e cola copiado com sucesso!");
+      }).catch(() => {
+        document.execCommand("copy");
+        alert("PIX copia e cola copiado com sucesso!");
+      });
+    }
+
+    function enviarComprovante() {
+      const mensagem = `Olá, vim pelo site da INFORBAE. Comprei ${produtoSelecionado} no valor de R$ ${precoSelecionado.toFixed(2).replace('.', ',')}. Já fiz o PIX e vou enviar o comprovante. Quero combinar a entrega/retirada.`;
+      const url = "https://wa.me/" + WHATSAPP_INFORBAE + "?text=" + encodeURIComponent(mensagem);
+      window.open(url, "_blank");
+    }
+
+    function tirarDuvidaProduto(produto) {
+      const mensagem = `Olá, vim pelo site da INFORBAE. Quero tirar uma dúvida sobre o produto: ${produto}.`;
+      const url = "https://wa.me/" + WHATSAPP_INFORBAE + "?text=" + encodeURIComponent(mensagem);
+      window.open(url, "_blank");
+    }
+
+    document.getElementById("pixModal").addEventListener("click", function(event) {
+      if (event.target.id === "pixModal") fecharPix();
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") fecharPix();
+    });
+
   </script>
 </body>
 </html>
